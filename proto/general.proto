@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package user;
+
+option go_package = "./app/user";
+
+message UserReq {
+    string name = 1;
+}
+
+message UserRes {
+    string message = 1;
+}
+
+service HelloService {
+    rpc SayHello (UserReq) returns (UserRes);
+}
