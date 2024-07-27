@@ -47,4 +47,5 @@ jobs:
         --memory=2Gi \
         --concurrency=80 \
         --tag=prod \
-        --timeout=300s
+        --timeout=300s \
+        --use-http2
