@@ -3,15 +3,17 @@ package logger
 import (
 	"context"
 
+	"github.com/blendle/zapdriver"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 	"google.golang.org/grpc/metadata"
 )
 
 var logger *zap.Logger
 
 func InitLogger() {
-	logger = zap.Must(zap.NewProduction())
+	logger = zap.Must(zapdriver.NewProductionConfig().Build(zap.AddStacktrace(zapcore.DPanicLevel)))
 }
 
 func Info(ctx context.Context, msg string, zapField ...zap.Field) {

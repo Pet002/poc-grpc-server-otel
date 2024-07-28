@@ -3,6 +3,7 @@ module github.com/Pet002/poc-grpc-server-otel
 go 1.22.5
 
 require (
+	github.com/blendle/zapdriver v1.3.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.53.0
 	go.opentelemetry.io/otel v1.28.0
 	go.opentelemetry.io/otel/sdk v1.28.0
